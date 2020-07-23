@@ -2,6 +2,7 @@ package br.com.dls.redisclient.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Reference;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.util.List;
@@ -14,4 +15,8 @@ public class Customer {
     private String id;
     private String name;
     private List<Account> accounts;
+
+    //@Reference
+    //private List<Account> accounts;
+
 }
