@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/customer")
-public class ContratoController {
+public class CustomerController {
     
     private final CustomerService customerService;
 
@@ -18,9 +18,11 @@ public class ContratoController {
     }
 
     @GetMapping("/{id}")
-    public Customer findById(@PathVariable("id") Long id) {
-        return customerService.find(id);
+    public Customer findById(@PathVariable("id") String id, @RequestParam Long accountId) {
+        return customerService.find(id, accountId);
     }
+
+
 
 
 }

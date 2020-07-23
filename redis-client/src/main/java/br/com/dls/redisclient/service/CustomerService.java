@@ -17,13 +17,14 @@ public class CustomerService {
         return (Customer) customerRepository.save(customer);
     }
 
-    public Customer find(Long id){
+    public Customer find(String id, Long accountId){
 
         Optional<Customer> optCustomer = customerRepository.findById(id);
         if (optCustomer.isPresent())
             return optCustomer.get();
         else
-            return null;
+            return customerRepository.findByAccountsId(accountId).orElseGet(Customer::new);
+
     }
 
 }
