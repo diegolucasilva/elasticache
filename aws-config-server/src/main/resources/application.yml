@@ -6,4 +6,5 @@ spring:
      config:
        server:
          git:
-           uri: https://github.com/diegolucasilva/aws-configs-store
+           #uri: https://github.com/diegolucasilva/aws-configs-store
+           uri: https://git-codecommit.sa-east-1.amazonaws.com/v1/repos/aws-configs-store

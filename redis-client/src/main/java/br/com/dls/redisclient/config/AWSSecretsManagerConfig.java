@@ -29,10 +29,10 @@ public class AWSSecretsManagerConfig {
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurerDev(ConfigurableEnvironment env) throws JsonProcessingException {
 
-        final Map<String, Object> secrets = getSecrets(env);
+       // final Map<String, Object> secrets = getSecrets(env);
 
-        final MutablePropertySources propertySources = env.getPropertySources();
-        propertySources.addFirst(new MapPropertySource("newmap", secrets));
+      //  final MutablePropertySources propertySources = env.getPropertySources();
+      //  propertySources.addFirst(new MapPropertySource("newmap", secrets));
 
         return new PropertySourcesPlaceholderConfigurer();
     }

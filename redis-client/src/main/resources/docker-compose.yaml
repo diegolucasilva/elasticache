@@ -24,6 +24,15 @@ services:
       - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
 
+    redis:
+      image: "redis:6.0.5-alpine"
+      ports:
+        - "6379:6379"
+    redisinsight:
+      image: "redislabs/redisinsight"
+      ports:
+        - "8001:8001"
+
 
 # cd /Users/diegolucas/Downloads/aws-master/app-redis/src/main/resources
 #TMPDIR=/private$TMPDIR docker-compose up

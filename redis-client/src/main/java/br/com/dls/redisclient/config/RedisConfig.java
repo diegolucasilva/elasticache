@@ -23,7 +23,7 @@ public class RedisConfig {
     @Value("${spring.redis.port}")
     private int port;
 
-    @Value("${spring.redis.password}")
+   // @Value("${spring.redis.password}")
     private String password;
 
     @Value("${spring.redis.ssl}")
@@ -37,10 +37,10 @@ public class RedisConfig {
         log.info("Host => {}:{}", host, port);
         log.info("My Secret => {}", password);
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(host, port);
-        redisStandaloneConfiguration.setDatabase(database);
+        //redisStandaloneConfiguration.setDatabase(database);
        // redisStandaloneConfiguration.setPassword(password);
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(redisStandaloneConfiguration);
-        jedisConnectionFactory.setUseSsl(ssl);
+       // jedisConnectionFactory.setUseSsl(ssl);
         return jedisConnectionFactory;
     }
 
