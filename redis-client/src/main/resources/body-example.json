@@ -1,4 +1,4 @@
-//localhost:8080/customer/1?name=joao&country=Canada
+//post localhost:8080/customer/
 {
   "name": "Joao",
   "accounts":[
@@ -17,3 +17,4 @@
     "zipcode": "55533"
   }
 }
+//get localhost:8080/customer/28d76a18-83d3-4ddd-9ba6-e6f9366ff9af?name=Joao&country=Canada
