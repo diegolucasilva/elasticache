@@ -1,17 +1,19 @@
-//localhost:8080/customer
+//localhost:8080/customer/1?name=joao&country=Canada
 {
   "name": "Joao",
   "accounts":[
     {
-      "id": 1,
       "number": "34533-12",
       "balance": 1000
     },
     {
-      "id": 2,
       "number": "34533-12",
       "balance": 1000
     }
-  ]
-
+  ],
+  "address": {
+    "city": "Toronto",
+    "country": "Canada",
+    "zipcode": "55533"
+  }
 }
