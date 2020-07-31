@@ -4,10 +4,13 @@ spring:
     host: ${REDIS_HOST:localhost}
     port: ${REDIS_PORT:6379}
     ssl: false
+    password: fake
     database: 10
 
 aws:
   secretsmanager:
+    enabled: false
+  paramstore:
     enabled: false
 
 cloud:
@@ -31,5 +34,3 @@ management:
     export:
       prometheus:
         enabled: true
-
-
