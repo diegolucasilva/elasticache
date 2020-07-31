@@ -1,5 +1,7 @@
 package br.com.dls.redisclient.config;
 
+import br.com.dls.redisclient.config.converter.AddressToBytesConverter;
+import br.com.dls.redisclient.config.converter.BytesToAddressConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,7 +12,10 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.convert.RedisCustomConversions;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+
+import java.util.Arrays;
 
 @Slf4j
 @Configuration
@@ -23,7 +28,7 @@ public class RedisConfig {
     @Value("${spring.redis.port}")
     private int port;
 
-   // @Value("${spring.redis.password}")
+    @Value("${spring.redis.password}")
     private String password;
 
     @Value("${spring.redis.ssl}")
@@ -45,10 +50,17 @@ public class RedisConfig {
     }
 
     @Bean
-    public RedisTemplate<String, Object> redisTemplate() {
-        RedisTemplate<String, Object> template = new RedisTemplate<>();
+    public RedisTemplate<?, ?> redisTemplate() {
+        RedisTemplate<byte[], byte[]> template = new RedisTemplate<>();
         template.setConnectionFactory(jedisConnectionFactory());
         return template;
     }
+
+    @Bean
+    public RedisCustomConversions redisCustomConversions(AddressToBytesConverter addressToBytes, BytesToAddressConverter bytesToAddress){
+        return new RedisCustomConversions(Arrays.asList(addressToBytes,bytesToAddress));
+    }
+
+
 
 }

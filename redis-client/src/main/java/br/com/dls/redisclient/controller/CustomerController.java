@@ -18,8 +18,8 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public Customer findById(@PathVariable("id") String id, @RequestParam Long accountId) {
-        return customerService.find(id, accountId);
+    public Customer findById(@PathVariable("id") String id, @RequestParam String name, @RequestParam  String country) {
+        return customerService.find(id, name, country);
     }
 
 

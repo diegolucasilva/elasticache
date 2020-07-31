@@ -14,9 +14,10 @@ public class Customer {
     @Id
     private String id;
     private String name;
+
+    @Reference
     private List<Account> accounts;
 
-    //@Reference
-    //private List<Account> accounts;
+    private Address address;
 
 }
