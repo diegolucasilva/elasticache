@@ -1,4 +1,4 @@
-package br.com.dls.redisclient.controller;
+package br.com.dls.redisclient.service;
 
 import br.com.dls.redisclient.domain.Customer;
 

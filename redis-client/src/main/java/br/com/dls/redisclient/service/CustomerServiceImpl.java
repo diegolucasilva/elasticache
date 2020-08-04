@@ -3,18 +3,15 @@ package br.com.dls.redisclient.service;
 import br.com.dls.redisclient.domain.Customer;
 import br.com.dls.redisclient.repository.AccountRepository;
 import br.com.dls.redisclient.repository.CustomerRepository;
-import br.com.dls.redisclient.utils.CustomerNotFoundAdvice;
 import br.com.dls.redisclient.utils.CustomerNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class CustomerServiceImpl {
+class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
 
